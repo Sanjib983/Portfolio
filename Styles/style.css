@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+}
+
+section {
+    display: none; /* সব সেকশন শুরুতে লুকানো থাকবে */
+    padding: 20px;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('/image/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main {
+    margin-top: 250px;
+    margin-left: 200px;
+}
+
+.navbar {
+    background: transparent;
+    color: rgb(214, 19, 19);
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    position: relative;
+}
+
+.navbar-links a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #04b2c5;
+    transition: width 0.3s ease;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+.navbar-hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-bar {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main {
+        margin-top: 180px;
+        margin-left: 20px;
+    }
+
+    .social-icon {
+        margin: 0px;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+        transition: max-height 0.3s ease;
+        overflow: hidden;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-hamburger {
+        display: block;
+    }
+}

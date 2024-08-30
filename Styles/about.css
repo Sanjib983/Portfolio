@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.568);
+    padding: 30px;
+    max-width: 100%;
+    margin-left: -70px;
+    margin-right: 100px;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+}
+
+.about {
+    position: relative;
+    height: 300vh;
+    background-image: url('/image/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbarr {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.507);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 10vh;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    margin-left: 50px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin: 0 15px;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    position: relative;
+}
+
+.navbar-links a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #04b2c5;
+    transition: width 0.3s ease;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+.navbar-hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-bar {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.pp {
+    margin-top: 30px;
+    border-radius: 50%;
+}
+
+/* Stats Section Styles */
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.stat-box {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    flex: 1;
+    max-width: 200px;
+}
+
+.stat-box h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.count {
+    font-size: 2rem;
+    color: #04b2c5; /* Progress color */
+    font-weight: bold;
+}
+
+.footer-text {
+    position: fixed;
+    bottom: 10px; /* Adjust this value to move it up or down */
+    right: 10px; /* Adjust this value to move it left or right */
+    color: #04b2c5; /* Sanjib Kobir's color */
+    font-size: 14px; /* Adjust the font size as needed */
+    font-family: Arial, sans-serif;
+    background: rgba(0, 0, 0, 0.6); /* Optional: Background to make text more readable */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .details{
+        display: flex;
+        flex-direction: column;
+    }
+    .main{
+        text-align: center;
+    }
+
+    .pp {
+        width: 150px;
+        margin: 20px 0;
+    }
+
+    .navbar-container {
+        width: 80%;
+    }
+    .about{
+        height: 1000vh;
+    }
+    .box{
+        align-items: center;
+        border: none;
+        border-radius: 0px;
+        background-color: rgba(122, 28, 28, 0);
+        padding: 0px;
+        max-width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        flex-direction: column;
+    }
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #333;
+        position: absolute;
+        top: 50px; /* Adjust based on navbar height */
+        left: 0;
+        z-index: 1000;
+        transition: max-height 0.3s ease;
+        overflow: hidden;
+    }
+
+    .navbar-links.active {
+        display: flex;
+        max-height: 300px; /* Adjust based on content */
+    }
+
+    .navbar-hamburger {
+        display: block;
+    }
+    
+    .navbar-links a {
+        padding: 15px;
+    }
+
+    .stat-box {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
